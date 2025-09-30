@@ -234,11 +234,12 @@ a:hover {
 
 .section-flow {
     background: var(--color-light);
+    padding: 40px 6vw;
 }
 
 .section-cta {
     background: linear-gradient(rgba(34, 34, 34, 0.6), rgba(34, 34, 34, 0.7)),
-                linear-gradient(130deg, #152239, #2f4056 50%, #18253a 100%);
+                url('C:/Users/TaichiShibuki/4.jpg') center center / cover no-repeat;
     color: var(--color-white);
 }
 
@@ -261,7 +262,7 @@ a:hover {
 .section-title {
     font-family: var(--font-serif);
     font-size: 32px;
-    margin: 0 0 30px;
+    margin: 0 0 24px;
     letter-spacing: 0.08em;
     text-align: center;
 }
@@ -487,45 +488,49 @@ dl dt {
 .flow-grid {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 240px minmax(0, 1fr);
-    grid-template-rows: repeat(3, auto);
+    grid-template-columns: 240px 280px 240px;
+    grid-template-rows: auto auto auto;
     grid-template-areas:
-        "step1 cycle step2"
-        "step5 cycle step3"
-        "step4 cycle step3";
-    gap: 36px 48px;
-    padding: 60px 40px;
-    align-items: start;
+        ". step1 ."
+        "step5 cycle step2"
+        "step4 . step3";
+    gap: 35px 40px;
+    padding: 0;
+    align-items: center;
+    justify-items: stretch;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .flow-step {
     background: rgba(255, 255, 255, 0.96);
     border: 1px solid rgba(124, 90, 58, 0.18);
-    border-radius: 20px;
-    padding: 28px 32px;
+    border-radius: 12px;
+    padding: 16px 18px;
     box-shadow: 0 24px 36px rgba(71, 58, 49, 0.08);
-    font-size: 15px;
-    line-height: 1.8;
+    font-size: 12px;
+    line-height: 1.5;
+    width: 100%;
 }
 
 .flow-step-label {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 6px 18px;
-    border-radius: 16px;
+    padding: 3px 12px;
+    border-radius: 10px;
     background: var(--color-primary);
     color: var(--color-white);
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.08em;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
 }
 
 .flow-step h3 {
-    margin: 0 0 12px;
+    margin: 0 0 6px;
     font-family: var(--font-serif);
-    font-size: 20px;
+    font-size: 14px;
     color: var(--color-primary);
 }
 
@@ -534,88 +539,55 @@ dl dt {
     color: #6a5a4f;
 }
 
-.flow-step--1 { grid-area: step1; }
-.flow-step--2 { grid-area: step2; }
-.flow-step--3 { grid-area: step3; }
-.flow-step--4 { grid-area: step4; }
-.flow-step--5 { grid-area: step5; }
+.flow-step--1 {
+    grid-area: step1;
+}
+
+.flow-step--2 {
+    grid-area: step2;
+}
 
 .flow-step--3 {
-    align-self: center;
+    grid-area: step3;
 }
 
 .flow-step--4 {
-    align-self: end;
+    grid-area: step4;
 }
 
 .flow-step--5 {
-    align-self: center;
+    grid-area: step5;
 }
 
 .flow-cycle {
     grid-area: cycle;
     align-self: center;
     justify-self: center;
-    width: 240px;
+    width: 280px;
     aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    background: #f6f2ee;
-    border: 2px solid rgba(124, 90, 58, 0.18);
     position: relative;
-    display: grid;
-    place-items: center;
-    padding: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.cycle-ring {
-    position: relative;
+.cycle-diagram {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    border: 1px dashed rgba(124, 90, 58, 0.38);
 }
 
-.cycle-ring::after {
-    content: "";
-    position: absolute;
-    inset: 18%;
-    border-radius: 50%;
-    border: 1px solid rgba(124, 90, 58, 0.12);
+.arrow-path {
+    fill: none;
+    stroke: #7c5a3a;
+    stroke-width: 1.8;
 }
 
-.cycle-step {
-    position: absolute;
+.cycle-label {
     font-family: var(--font-serif);
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    color: rgba(124, 90, 58, 0.7);
-}
-
-.cycle-step--1 {
-    top: -18px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.cycle-step--2 {
-    top: 24%;
-    right: -30px;
-}
-
-.cycle-step--3 {
-    bottom: -18px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.cycle-step--4 {
-    bottom: 18%;
-    left: -34px;
-}
-
-.cycle-step--5 {
-    top: 20%;
-    left: -34px;
+    font-size: 13px;
+    font-weight: 600;
+    fill: #7c5a3a;
+    letter-spacing: 0.1em;
 }
 
 .section-cta .btn-primary {
@@ -629,7 +601,7 @@ dl dt {
 }
 
 .cta-title {
-    font-size: 40px;
+    font-size: 32px;
     font-family: var(--font-serif);
     margin: 0;
 }
@@ -653,6 +625,11 @@ dl dt {
     gap: 10px;
     font-family: var(--font-serif);
     font-size: 20px;
+}
+
+.footer-logo {
+    height: 15px;
+    width: auto;
 }
 
 .footer-links {
@@ -701,28 +678,28 @@ dl dt {
     }
 
     .flow-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         grid-template-areas:
-            "step1 step2"
-            "step5 step3"
-            "step4 step3"
-            "cycle cycle";
-        padding: 40px 20px;
-        gap: 28px 32px;
+            "step1"
+            "step2"
+            "step3"
+            "step4"
+            "step5"
+            "cycle";
+        padding: 0;
+        gap: 20px;
+        max-width: 100%;
     }
 
     .flow-cycle {
-        width: 200px;
-        padding: 18px;
+        width: 220px;
+        margin: 20px auto;
     }
 
-    .cycle-step--2 {
-        right: -24px;
-    }
-
-    .cycle-step--4,
-    .cycle-step--5 {
-        left: -26px;
+    .flow-step {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
     }
 }
 
@@ -795,17 +772,26 @@ dl dt {
 
     .flow-grid {
         grid-template-columns: 1fr;
-        grid-template-areas: none;
+        grid-template-areas:
+            "step1"
+            "step2"
+            "step3"
+            "step4"
+            "step5"
+            "cycle";
         padding: 0;
-        gap: 24px;
+        gap: 20px;
+        max-width: 100%;
     }
 
     .flow-step {
-        padding: 24px;
+        padding: 16px 18px;
+        width: 100%;
     }
 
     .flow-cycle {
-        display: none;
+        width: 200px;
+        margin: 20px auto;
     }
 
     .section-label {
@@ -816,10 +802,29 @@ dl dt {
 @media (max-width: 540px) {
     .site-header {
         position: static;
+        padding: 12px 16px;
+    }
+
+    .main-nav ul {
+        font-size: 13px;
+        gap: 12px;
+    }
+
+    .brand-logo {
+        height: 32px;
     }
 
     .hero {
         min-height: 300px;
+        padding: 40px 20px 60px;
+    }
+
+    .hero-sub {
+        font-size: 28px;
+    }
+
+    .hero-lead {
+        font-size: 14px;
     }
 
     .hero-visual {
@@ -829,9 +834,39 @@ dl dt {
     .hero-cta {
         flex-direction: column;
         align-items: flex-start;
+        gap: 16px;
+    }
+
+    .section-light,
+    .section-beige,
+    .section-cases,
+    .section-flow,
+    .section-cta {
+        padding: 60px 20px;
+    }
+
+    .section-title {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    .flow-cycle {
+        width: 180px;
+    }
+
+    .cycle-label {
+        font-size: 11px;
+    }
+
+    .cta-title {
+        font-size: 28px;
     }
 
     dl div {
         grid-template-columns: 1fr;
+    }
+
+    .case-card {
+        flex: 0 0 260px;
     }
 }

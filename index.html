@@ -12,7 +12,7 @@
 <body>
     <header class="site-header">
         <div class="brand">
-            <img src="logo.jpg" alt="foRPro" class="brand-logo">
+            <img src="foRProロゴ.jpg" alt="foRPro" class="brand-logo">
         </div>
         <nav class="main-nav">
             <ul>
@@ -240,13 +240,35 @@
                         <p>プロジェクト終了後、ご希望条件をもとに次のプロジェクトをご紹介いたします。</p>
                     </article>
                     <div class="flow-cycle" aria-hidden="true">
-                        <div class="cycle-ring">
-                            <span class="cycle-step cycle-step--1">STEP1</span>
-                            <span class="cycle-step cycle-step--2">STEP2</span>
-                            <span class="cycle-step cycle-step--3">STEP3</span>
-                            <span class="cycle-step cycle-step--4">STEP4</span>
-                            <span class="cycle-step cycle-step--5">STEP5</span>
-                        </div>
+                        <svg class="cycle-diagram" viewBox="0 0 280 280">
+                            <defs>
+                                <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                                    <polygon points="0 0, 6 3, 0 6" fill="#7c5a3a" />
+                                </marker>
+                            </defs>
+
+                            <!-- Main circle -->
+                            <circle cx="140" cy="140" r="80" fill="none" stroke="#e5ddd5" stroke-width="2"/>
+
+                            <!-- Arrows -->
+                            <!-- STEP1 to STEP2 (top to right) -->
+                            <path d="M 140 60 A 80 80 0 0 1 198 98" class="arrow-path" marker-end="url(#arrowhead)" />
+                            <!-- STEP2 to STEP3 (right to bottom-right) -->
+                            <path d="M 205 110 A 80 80 0 0 1 185 190" class="arrow-path" marker-end="url(#arrowhead)" />
+                            <!-- STEP3 to STEP4 (bottom-right to bottom-left) -->
+                            <path d="M 175 197 A 80 80 0 0 1 105 197" class="arrow-path" marker-end="url(#arrowhead)" />
+                            <!-- STEP4 to STEP5 (bottom-left to left) -->
+                            <path d="M 95 190 A 80 80 0 0 1 75 110" class="arrow-path" marker-end="url(#arrowhead)" />
+                            <!-- STEP5 to STEP1 (left to top) -->
+                            <path d="M 82 98 A 80 80 0 0 1 140 60" class="arrow-path" marker-end="url(#arrowhead)" />
+
+                            <!-- Step labels -->
+                            <text x="140" y="35" text-anchor="middle" class="cycle-label">STEP1</text>
+                            <text x="235" y="100" text-anchor="middle" class="cycle-label">STEP2</text>
+                            <text x="205" y="225" text-anchor="middle" class="cycle-label">STEP3</text>
+                            <text x="75" y="225" text-anchor="middle" class="cycle-label">STEP4</text>
+                            <text x="45" y="100" text-anchor="middle" class="cycle-label">STEP5</text>
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -264,8 +286,7 @@
     <footer class="site-footer">
         <div class="footer-inner">
             <div class="footer-brand">
-                <span class="brand-mark">fP</span>
-                <span class="brand-name">foRPro</span>
+                <img src="logoWhite.png" alt="foRPro" class="footer-logo">
             </div>
             <ul class="footer-links">
                 <li><a href="#">運営会社</a></li>
